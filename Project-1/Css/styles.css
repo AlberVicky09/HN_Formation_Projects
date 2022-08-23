@@ -1,0 +1,274 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+/*#region NavigationMenu*/
+#menuList{
+    position: fixed;
+    top: 0;
+    width: 98%;
+    list-style-type: none;
+    margin-top: 0px;
+    padding: 0;
+    border-left: 1%;
+    overflow: hidden;
+    font-size: 13pt;
+    background-color: #333;
+    z-index: 1;
+}
+
+/*#region DefaultMenuItems*/
+.menuListItem {
+    float: right;
+    border-right:1px solid #bbb;
+    border-left:1px solid #bbb;
+}
+.menuListItem a, .servicesButton {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.menuListItem a:hover:not(.active), .servicesButton:hover, .servicesDropdown a:hover{
+    background-color: #111;
+}
+/*#endregion DefaultMenuItems*/
+
+/*#region ActiveMenuItems*/
+.activeMenuListItem {
+    float: right;
+    background-color: rgb(187, 255, 0);
+    border-right:1px solid rgb(187, 255, 0);
+    border-left:1px solid #bbb;
+}
+.activeMenuListItem a {
+    display: block;
+    color: rgb(20, 36, 15);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.activeMenuListItem a:hover:not(.active) {
+    color: white;
+    background-color: rgb(56, 73, 7);
+}
+/*#endregion ActiveMenuItems*/
+
+/*#region HomeMenuItem*/
+.homeMenuItem {
+    float: left;
+    border-right:1px solid #bbb;
+    border-left:1px solid #bbb;
+}
+.homeMenuItem a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.homeMenuItem a:hover:not(.active) {
+    background-color: #111;
+}
+/*#endregion HomeMenuItem*/
+
+/*#region ActiveHomeMenuItem*/
+.activeHomeMenuItem {
+    float: left;
+    background-color: rgb(187, 255, 0);
+    border-right:1px solid rgb(187, 255, 0);
+    border-left:1px solid #bbb;
+}
+.activeHomeMenuItem a {
+    display: block;
+    color: rgb(20, 36, 15);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.activeHomeMenuItem a:hover {
+    color: white;
+    background-color: rgb(56, 73, 7);
+}
+/*#endregion ActiveHomeMenuItem*/
+
+/*#region ServicesButton*/
+.servicesItem{
+    float: right;
+}
+
+.servicesDropdown {
+    display: none;
+    position: fixed;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+  
+.servicesDropdown a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.servicesItem:hover .servicesDropdown{
+    display: block;
+}
+
+.servicesDropdown .serviceActive{
+    color: black;
+    background-color: rgb(187, 255, 0);
+}
+
+.servicesDropdown .serviceActive:hover {
+    color: white;
+    background-color: rgb(56, 73, 7);
+}
+
+/*#endregion ServicesButton*/
+
+/*#endregion NavigationMenu*/
+
+/*#region Footer*/
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    background-color: #333;
+    border-collapse: collapse;
+    border: 3px solid rgb(187, 255, 0);
+    color: white;
+    text-align: center;
+    font-size: 10.1pt;
+    margin-top: 10px;
+}
+
+#footerTitle {
+    flex-basis: 100%;
+    font-size:30px;
+    border-bottom: 3px solid rgb(187, 255, 0);
+    margin: 0;
+    padding: 1% 0 1% 0;
+}
+
+#footerSocialNetwork {
+    float: left;
+    font-size: 20px;
+    flex-basis: 35%;
+    padding: 1%;
+}
+
+#footerForm {
+    float: left;
+    flex-basis: 65%;
+    text-align: left;
+    border-right: 3px solid rgb(187, 255, 0);
+    padding: 1%;
+}
+
+#footerForm label{
+    display: inline-block;
+    width: 95px;
+}
+
+#footerForm input,#footerForm select{
+    box-sizing: border-box;
+    width: calc(100% - 100px);
+}
+
+#footerForm textarea {
+    width: 98.5%;
+}
+
+#footerForm #submitFooterForm {
+    width: 100%;
+}
+/*#endregion Footer*/
+
+/*#region Page*/
+#pageTitle {
+    position: relative;
+    margin-top: 7.5%;
+    margin-bottom: 0%;
+    text-align: center;
+    background-color: #666;
+    color: white;
+    padding: 5px 2px;
+    flex-basis: 100%;
+    font-size: 25pt;
+}
+
+#pageEven {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 1%;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 5px 2px
+}
+
+#pageOdd{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 1%;
+    text-align: center;
+    background-color: #666;
+    color: white;
+    padding: 5px 2px
+}
+/*#endregion Index Page*/
+
+/*#region On screens that are less than 620 px (tablet)*/
+@media screen and (max-width: 620px) {
+    .menuListItem, .activeMenuListItem, .homeMenuItem, .activeHomeMenuItem, .servicesItem {
+        float: none;
+        width: 100%;
+    }
+
+    .servicesDropdown{
+        width: 98%;
+    }
+
+    #pageTitle {
+        margin-top:80%;
+        font-size: 20pt;
+    }
+
+    #footerSocialNetwork {
+        flex-basis: 100%;
+    }
+
+    #footerForm {
+        flex-basis: 100%;
+        border-right: none;
+        border-bottom: 3px solid rgb(187, 255, 0);
+    }
+
+}
+/*#endregion On screens that are less than 620 px (tablet)*/
+
+/*#region On screens thar are wider than 758 px (desktop)*/
+@media screen and (min-width: 900px) {
+    #pageEven, #pageOdd {
+        font-size: 24pt;
+    }
+
+    #pageTitle {
+        font-size: 32pt;
+        margin: 4.5% 0% 0% 0%;
+    }
+}
+/*#endregion On screens that are wider than 758 px (desktop)*/
