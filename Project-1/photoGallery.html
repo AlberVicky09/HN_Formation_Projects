@@ -12,13 +12,15 @@
     <link rel="stylesheet" href="Css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 </head>
+
 <body>
+
     <!--#region Navigation bar-->
     <ul id="menuList">
-        <li class="activeMenuListItem"><a href="">Contact</a></li>
+        <li class="menuListItem"><a href="contact.html">Contact</a></li>
         <li class="menuListItem"><a href="news.html">News</a></li>
         <li class="menuListItem"><a href="aboutUs.html">About us</a></li>
-        <li class="menuListItem"><a href="photoGallery.html">Photo Gallery</a></li>
+        <li class="activeMenuListItem"><a href="">Photo Gallery</a></li>
         <li class="servicesItem">
             <a href="#services" class="servicesButton" style="pointer-events: none;">Services</a>
             <div class="servicesDropdown">
@@ -33,12 +35,37 @@
         <li class="homeMenuItem"><a href="index.html">Home</a></li>
     </ul>
     <!--#endregion Navigation bar-->
+    
+    <!--#region Main Page-->
+    <h1 id="pageTitle">SEE OUR FINISHED PROJECTS</h1>
+    <div id="pageEven">
+        <img src="Images/placeholder.png" alt="Company image" width="33%" height="33%" style="border-right: 1px solid white;"/>
+        <img src="Images/placeholder.png" alt="Company image" width="33%" height="33%" style="border-right: 1px solid white;"/>
+        <img src="Images/placeholder.png" alt="Company image" width="33%" height="33%"/>
+    </div>
 
-    <div id="blankSpace"></div>
+    <div id="pageOdd">
+        <h3 style="flex-basis:33%">Meet blabla, our digital design team leader<br>Blabla is a blabla that blabla...</h3>   
+        <h3 style="flex-basis:33%">Meet blabla, our digital design team leader<br>Blabla is a blabla that blabla...</h3>   
+        <h3 style="flex-basis:33%">Meet blabla, our digital design team leader<br>Blabla is a blabla that blabla...</h3>  
+    </div>
 
+    <div id="pageEven">
+        <img src="Images/placeholder.png" alt="Company image" width="33%" height="33%" style="border-right: 1px solid white;"/>
+        <img src="Images/placeholder.png" alt="Company image" width="33%" height="33%" style="border-right: 1px solid white;"/>
+        <img src="Images/placeholder.png" alt="Company image" width="33%" height="33%"/>
+    </div>
+
+    <div id="pageOdd">
+        <h3 style="flex-basis:33%">Meet blabla, our digital design team leader<br>Blabla is a blabla that blabla...</h3>   
+        <h3 style="flex-basis:33%">Meet blabla, our digital design team leader<br>Blabla is a blabla that blabla...</h3>   
+        <h3 style="flex-basis:33%">Meet blabla, our digital design team leader<br>Blabla is a blabla that blabla...</h3>  
+    </div>
+    <!--#endregion Main Page-->
+    
     <!--#region Footer-->
-    <h2 id="pageTitle">Contact Us!</h2>
     <footer id="footer">
+        <h2 id="footerTitle">Contact Us!</h2>
         <form id="footerForm" action="http://vip.groupehn.com:20003/html/infospost.php" method="POST" target = "_blank">
             <label for="lastname">Your last name:</label>
             <input id="lastname" type="text" name="lastname" style="margin-bottom:5px"/><br>
@@ -88,4 +115,5 @@
         </p>
     </footer>
     <!--#endregion Footer-->
+
 </body>
