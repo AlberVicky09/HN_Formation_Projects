@@ -7,11 +7,10 @@
 #menuList{
     position: fixed;
     top: 0;
-    width: 98%;
+    width: 99%;
     list-style-type: none;
     margin-top: 0px;
     padding: 0;
-    border-left: 1%;
     border-bottom: 1px solid white;
     overflow: hidden;
     font-size: 13pt;
@@ -38,20 +37,20 @@
 /*#endregion DefaultMenuItems*/
 
 /*#region ActiveMenuItems*/
-.activeMenuListItem {
+.activeMenuListItem{
     float: right;
     background-color: rgb(187, 255, 0);
-    border-right:1px solid rgb(187, 255, 0);
-    border-left:1px solid #bbb;
+    border-right: 1px solid rgb(187, 255, 0);
+    border-left:1px solid rgb(187, 255, 0)
 }
-.activeMenuListItem a {
+.activeMenuListItem a{
     display: block;
     color: rgb(20, 36, 15);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-.activeMenuListItem a:hover:not(.active) {
+.activeMenuListItem a:hover:not(.active), .activeServicesButton:hover {
     color: white;
     background-color: rgb(56, 73, 7);
 }
@@ -120,18 +119,28 @@
 .servicesItem:hover .servicesDropdown{
     display: block;
 }
+/*#endregion ServicesButton*/
 
-.servicesDropdown .serviceActive{
+/*#region ActiveServicesButton*/
+.activeServicesButton {
+    display: block;
+    color: black;
+    background-color: rgb(187, 255, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.servicesDropdown .activeDropDownItem{
     color: black;
     background-color: rgb(187, 255, 0);
 }
 
-.servicesDropdown .serviceActive:hover {
+.servicesDropdown .activeDropDownItem:hover {
     color: white;
     background-color: rgb(56, 73, 7);
 }
-
-/*#endregion ServicesButton*/
+/*#endregion ActiveServicesButton*/
 
 /*#endregion NavigationMenu*/
 
@@ -205,6 +214,18 @@
     font-size: 25pt;
 }
 
+#pageSecondaryTitle {
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    text-align: center;
+    background-color: rgb(187, 255, 0);
+    color: black;
+    padding: 5px 2px;
+    flex-basis: 100%;
+    font-size: 25pt;
+}
+
 #pageEven {
     display: flex;
     justify-content: center;
@@ -240,9 +261,17 @@
 
 /*#region On screens that are less than 620 px (tablet)*/
 @media screen and (max-width: 620px) {
-    .menuListItem, .activeMenuListItem, .homeMenuItem, .activeHomeMenuItem, .servicesItem {
+    .menuListItem, .activeMenuListItem, .homeMenuItem, .activeHomeMenuItem{
         float: none;
         width: 100%;
+    }
+
+    .servicesItem {
+        float: none;
+        visibility: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        position:relative;
     }
 
     #menuList {
@@ -250,12 +279,28 @@
     }
 
     .servicesDropdown{
+        visibility: visible;
+        display: flex;
+        width: 98%;
+    }
+    .servicesItem:hover .servicesDropdown{
+        display:flex;
         width: 98%;
     }
 
-    #pageTitle {
+    .dropDownItem, .activeDropDownItem {
+        float:left;
+        flex-basis: 25%;
+    }
+
+    #pageTitle{
         margin-top:73%;
         font-size: 20pt;
+    }
+
+    #pageSecondaryTitle {
+        margin-top:5%;
+        font-size:20pt;
     }
 
     #footerSocialNetwork {
