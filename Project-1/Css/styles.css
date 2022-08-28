@@ -202,6 +202,7 @@
 /*#endregion Footer*/
 
 /*#region Page*/
+/*#region DefaultPage*/
 #pageTitle {
     position: relative;
     margin-top: 7.5%;
@@ -257,10 +258,138 @@
 #blankSpace {
     margin-top:7%;
 }
-/*#endregion Index Page*/
+
+.photoSide {
+    width: 25%;
+    height: 20vw;
+    padding: 0% 1%;
+}
+
+.textSide {
+    flex-basis:75%;
+    padding: 0% 1%;
+}
+
+.eventTextSide {
+    flex-basis:75%;
+    padding: 0% 1%;
+    font-size: 18pt;
+}
+
+/*#endregion DefaultPage*/
+/*#region GalleryPage*/
+.photo30 {
+    width: 33%;
+    height: 35vw;
+}
+
+.photo30Tall {
+    width: 33%;
+    height: 40vw;
+}
+
+.text30 {
+    flex-basis:33%;
+    font-size:14pt;
+    padding: 0% 1%;
+}
+
+.div30Dark {
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 5px 2px;
+    margin: 1% 1%;  
+}
+
+.div30Light {
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+    background-color: #666;
+    color: white;
+    padding: 5px 2px;
+    margin: 1% 1%;     
+}
+
+.eventImg {
+    width: 95%;
+    height: 25vw;
+    margin-bottom: 2%;
+}
+/*#endregion GalleryPage*/
+/*#region AboutUsPage*/
+.aboutUsCardEven {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    margin-top: 1%;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1% 1%;
+}
+
+.aboutUsCardOdd {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    margin-top: 1%;
+    text-align: center;
+    background-color: #666;
+    color: white;
+    padding: 1% 1%;
+}
+
+.aboutUsPic{
+    width: 100%;
+    height: 45vw;
+}
+
+.aboutUsTxt {
+    font-size: 18pt;
+}
+/*#endregion AboutUsPage*/
+/*#region NewsPage*/
+.newsTitle {
+    flex-basis: 30%;
+}
+
+.newsImg {
+    width: 100%;
+    padding: 1%;
+}
+
+.newsTxt {
+    font-size: 16pt;
+    flex-basis:70%;
+    padding:0% 1%
+}
+
+.newsDate {
+    font-style: italic;
+    font-size: 14pt;
+}
+/*#endregion NewsPage*/
+/*#endregion Page*/
 
 /*#region On screens that are less than 620 px (tablet)*/
 @media screen and (max-width: 620px) {
+    /*#region NavigationMenu*/
     .menuListItem, .activeMenuListItem, .homeMenuItem, .activeHomeMenuItem{
         float: none;
         width: 100%;
@@ -292,7 +421,19 @@
         float:left;
         flex-basis: 25%;
     }
+    /*#endregion NavigationMenu*/
+    /*#region Footer*/
+    #footerSocialNetwork {
+        flex-basis: 100%;
+    }
 
+    #footerForm {
+        flex-basis: 100%;
+        border-right: none;
+        border-bottom: 3px solid rgb(187, 255, 0);
+    }
+    /*#endregion Footer*/
+    /*#region DefaultPage*/
     #pageTitle{
         margin-top:73%;
         font-size: 20pt;
@@ -303,25 +444,72 @@
         font-size:20pt;
     }
 
-    #footerSocialNetwork {
-        flex-basis: 100%;
-    }
-
-    #footerForm {
-        flex-basis: 100%;
-        border-right: none;
-        border-bottom: 3px solid rgb(187, 255, 0);
+    #pageEven, #pageOdd {
+        font-size:12pt;
     }
 
     #blankSpace {
         margin-top:73%;
+    }    
+
+    .photoSide {
+        height: 34vw;
+        width: 30%;
     }
 
+    .textSide{
+        flex-basis:70%;
+        padding: 0% 1%
+    }
+
+    .eventTextSide {
+        font-size: 16pt;
+        flex-basis:70%;
+        padding: 0% 1%
+    }
+    /*#endregion DefaultPage*/
+    /*#region GalleryPage*/
+    .photo30 {
+        height: 30vw;
+    }
+    
+    .text30 {
+        font-size:12pt;
+    }
+
+    .div30Dark, .div30Light {
+        font-size: 12pt;
+    }
+    /*#endregion GalleryPage*/
+    /*#region AboutUsPage*/  
+    .aboutUsPic{
+        height: 42vw;
+    }
+
+    .aboutUsTxt {
+        font-size: 14pt;
+    }
+    /*#endregion AboutUsPage*/
+    /*#region NewsPage*/
+    .newsTxt {
+        font-size: 14pt;
+    }
+
+    .newsDate {
+        font-size: 10pt;
+    }
+    /*#endregion NewsPage*/
 }
 /*#endregion On screens that are less than 620 px (tablet)*/
 
 /*#region On screens thar are wider than 1100 px (desktop)*/
 @media screen and (min-width: 1100px) {
+    /*#region NavigationMenu*/
+    #menuList {
+        font-size: 17pt;
+    }
+    /*#endregion NavigationMenu*/
+    /*#region DefaultPage*/
     #pageEven, #pageOdd {
         font-size: 22pt;
     }
@@ -343,12 +531,52 @@
         height: 18em;
     }
 
-    #menuList {
-        font-size: 17pt;
-    }
-
     #blankSpace {
         margin-top:5%;
     }
+
+    .photoSide {
+        height: 22vw;
+    }
+
+    .textSide {
+        font-size: 24pt;
+    }
+
+    .eventTextSide {
+        font-size: 34pt;
+    }
+    /*#endregion DefaultPage*/
+    /*#region GalleryPage*/
+    .photo30 {
+        height: 32vw;
+    }
+    
+    .text30 {
+        font-size:26pt;
+    }
+
+    .div30Dark, .div30Light {
+        font-size: 20pt;
+    }
+    /*#endregion GalleryPage*/
+    /*#region AboutUsPage*/
+    .aboutUsPic{
+        height: 45vw;
+    }
+
+    .aboutUsTxt {
+        font-size: 24pt;
+    }
+    /*#endregion AboutUsPage*/
+    /*#region NewsPage*/
+    .newsTxt {
+        font-size: 28pt;
+    }
+
+    .newsDate {
+        font-size: 18pt;
+    }
+    /*#endregion NewsPage*/
 }
 /*#endregion On screens that are wider than 1100 px (desktop)*/
