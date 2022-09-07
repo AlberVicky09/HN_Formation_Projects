@@ -17,16 +17,16 @@ namespace Project1_C_
             daysWorked = 0;
             daysInCharge = 0;
             activity = "";
-            startingDate = DateTime.MinValue;
+            startingDate = DateTime.Now;
         }
 
-        protected IEmployee(string fName, string lName, int d, string act){
+        protected IEmployee(string fName, string lName, int d, string act, DateTime sDate){
             firstName = fName;
             lastName = lName;
             daysWorked = 0;
             daysInCharge = d;
             activity = act;
-            startingDate = DateTime.MinValue;
+            startingDate = sDate;
         }
 
         protected IEmployee(string fName, string lName, int dWorked, int dCharge, string act, DateTime sDate){
@@ -39,7 +39,13 @@ namespace Project1_C_
         }
         
         //Methods
-        public void UpdateWorkDays(){ daysWorked++; }
+        public bool UpdateWorkDays(){
+            daysWorked++;
+            return daysWorked == daysInCharge;
+        }
+
         public void SetStartingDate(){ startingDate = DateTime.Now; }
+
+        public void SetActivity(string act){ activity = act; }
     }
 }

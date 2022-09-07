@@ -64,11 +64,27 @@ namespace Project1_C_
             }
             return false;
         }
-        public void UpdateWorkDays(){
-            teamLeader.UpdateWorkDays();
-            foreach(ProgrammerJunior p in teamCrew)
-                p.UpdateWorkDays();
-            workedDays++;
+        public bool UpdateWorkDays(ref bool chargeEnded, ref int junniorNum){
+
+            //Update days and check if it has worked all of its days (for programmer in charge)
+            if(teamLeader.UpdateWorkDays()){
+                chargeEnded = true;
+                Console.WriteLine(teamName + ": Leader (" + teamLeader.firstName + " " + teamLeader.lastName + ") has ended his job.\nTotal days worked: " + teamLeader.daysWorked + ". Good bye!");
+            }
+
+            //Update days and check if it has worked all of its days (for junior programmers)
+            List<ProgrammerJunior> crewRemaining = new List<ProgrammerJunior>();
+            foreach(ProgrammerJunior p in teamCrew){
+                if(p.UpdateWorkDays()){
+                    junniorNum++;
+                    Console.WriteLine(teamName + ": Worker (" + p.firstName + " " + p.lastName + ") has ended his job,\nTotal days worked: " + p.daysWorked + ". Good bye!");
+                }else{
+                    crewRemaining.Add(p);
+                }
+            }
+            teamCrew = crewRemaining;
+            //Update work days and check if project is ended
+            return ++workedDays == totalDays;
         }
     }
 }
