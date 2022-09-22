@@ -8,4 +8,9 @@ This repository contains the two projects developed for the .Net formation given
   Development of a C# console application that manages a company with various working teams. <br/>
   These teams are composed by a programmer in charge and by one or more junnior programmer. <br/>
   Once a worker ends his working days, it is replaced, and once a project ends, another one is created with a full new crew
+ 
+.Project 3<br/>
+  Development of a sudoku checker using Javascript, combined with some HTML
   
+.OFF
+  Angular tutorial projects with some notes beside
