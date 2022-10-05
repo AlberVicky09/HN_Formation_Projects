@@ -1,5 +1,5 @@
 # HN_Formation_Projects
-This repository contains the two projects developed for the .Net formation given by HN Services
+This repository contains the projects developed for the .Net formation given by HN Services
 
 ·Project 1<br/>
   Development of a webpage using HTML/CSS. Webpage for a graphic design company with various services.<br/><br/>
@@ -12,5 +12,5 @@ This repository contains the two projects developed for the .Net formation given
 .Project 3<br/>
   Development of a sudoku checker using Javascript, combined with some HTML
   
-.OFF
-  Angular tutorial projects with some notes beside
+.Project 4<br/>
+  Development of Project 1 webpage using MVC in C#
