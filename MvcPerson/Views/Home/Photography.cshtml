@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Photography";
+}
+
+<!--#region Navigation bar-->
+<ul id="menuList">
+    <li class="menuListItem"><a asp-area=""  asp-controller="Countries" asp-action="Index">Contact</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="News">News</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
+    <li class="servicesItem">
+        <a href="#services" class="activeServicesButton" style="pointer-events: none;">Services</a>
+        <div class="servicesDropdown">
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Logos">Logos</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Websites">Websites</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Prints">Prints</a>
+            <a class="activeDropDownItem">Photography</a>
+        </div>
+    </li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="events">Events</a></li>
+    <li class="homeMenuItem"><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+</ul>
+<!--#endregion Navigation bar-->
+
+<!--#region Main Page-->
+<h1 id="pageTitle">PHOTOGRAPHY</h1>
+
+<div id="pageEven">
+    <h3 style="flex-basis:75%">Don’t settle for stock photography (people notice). Having photos taken specifically to suit your needs adds a custom look and will help to build trust with your customers.</h3>
+    <img src="~/images/photo1.jpg" alt="Company image" height="25%" width="25%"/>
+</div>
+
+<div id="pageOdd">
+    <img src="~/images/photo2.jpg" alt="Company image" height="25%" width="25%"/>
+    <h3 style="flex-basis:75%">With our photo studio on location, we can do it.<br>You can check out some of our Photos.</h3>
+</div>   
+
+<h1 id="pageSecondaryTitle">EXAMPLES FROM SOME OF OUR PHOTOS</h1>
+<div id="pageEven">
+    <img class="photo30" style="margin: 0% 0.25% 0% 0%" src="~/images/photography1.jpg" alt="Company image"/>
+    <img class="photo30" src="~/images/photography2.jpg" alt="Company image"/>
+    <img class="photo30" style="margin: 0% 0% 0% 0.25%" src="~/images/photography3.jpg" alt="Company image"/>
+</div>
+<!--#endregion Main Page-->
+

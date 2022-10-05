@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Events";
+}
+
+<!--#region Navigation bar-->
+<ul id="menuList">
+    <li class="menuListItem"><a asp-area=""  asp-controller="Countries" asp-action="Index">Contact</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="News">News</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
+    <li class="servicesItem">
+        <a href="#services" class="servicesButton" style="pointer-events: none;">Services</a>
+        <div class="servicesDropdown">
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Logos">Logos</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Websites">Websites</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Prints">Prints</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Photography">Photography</a>
+        </div>
+    </li>
+    <li class="activeMenuListItem"><a>Events</a></li>
+    <li class="homeMenuItem"><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+</ul>
+<!--#endregion Navigation bar-->
+
+<!--#region Main Page-->
+<h1 id="pageTitle">OUR HOSTED EVENTS</h1>
+<div style="display: flex;">
+    <div class="div30Dark">
+        <h3>Friday, August 26.<br><br>Freshly new website presentation.</h3>
+        <img class="eventImg" src="~/images/openning.jpg" alt="Company image"/>
+    </div>
+
+    <div class="div30Light">
+        <h3>Sunday, August 28.<br><br>Launch of photography project for NewBrand.</h3>
+        <img class="eventImg" src="~/images/photoProject.jpg" alt="Company image"/>
+    </div>
+
+    <div class="div30Dark">
+        <h3>Thursday, September 1.<br><br>Presentation of newly hired digital designers.</h3>
+        <img class="eventImg" src="~/images/hiring.jpg" alt="Company image"/>
+    </div>
+</div>
+
+<div id="pageOdd">
+    <h3 class="eventTextSide" style="flex-basis:100%">More coming soon...<br>Stay tunned in our social media for all the news!</h3>
+</div> 
+<!--#endregion Main Page-->

@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Prints";
+}
+
+<!--#region Navigation bar-->
+<ul id="menuList">
+    <li class="menuListItem"><a asp-area=""  asp-controller="Countries" asp-action="Index">Contact</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="News">News</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
+    <li class="servicesItem">
+        <a href="#services" class="activeServicesButton" style="pointer-events: none;">Services</a>
+        <div class="servicesDropdown">
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Logos">Logos</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Websites">Websites</a>
+            <a class="activeDropDownItem">Prints</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Photography">Photography</a>
+        </div>
+    </li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="events">Events</a></li>
+    <li class="homeMenuItem"><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+</ul>
+<!--#endregion Navigation bar-->
+
+<!--#region Main Page-->
+<h1 id="pageTitle">PRINTS</h1>
+
+<div id="pageEven">
+    <h3 style="flex-basis:75%">Every bit of communication leaving your company has the opportunity to impress, stand out, win respect and gain new customers. You are a professional, make sure you look that way.</h3>
+    <img src="~/images/flyerTitle.jpg" alt="Company image" height="25%" width="25%"/>
+</div>
+
+<h1 id="pageSecondaryTitle">EXAMPLES FROM SOME OF OUR PRINTS</h1>
+<div id="pageOdd">
+    <img class="photo30Tall" style="margin: 0% 0.25% 0% 0%" src="~/images/flyer1.jpg" alt="Company image"/>
+    <img class="photo30Tall" src="~/images/flyer2.jpeg" alt="Company image"/>
+    <img class="photo30Tall" style="margin: 0% 0% 0% 0.25%" src="~/images/flyer3.jpg" alt="Company image"/>
+</div>
+<!--#endregion Main Page-->

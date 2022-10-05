@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Logos";
+}
+
+<!--#region Navigation bar-->
+<ul id="menuList">
+    <li class="menuListItem"><a asp-area=""  asp-controller="Countries" asp-action="Index">Contact</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="News">News</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
+    <li class="servicesItem">
+        <a href="#services" class="activeServicesButton" style="pointer-events: none;">Services</a>
+        <div class="servicesDropdown">
+            <a class="activeDropDownItem">Logos</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Websites">Websites</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Prints">Prints</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Photography">Photography</a>
+        </div>
+    </li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="events">Events</a></li>
+    <li class="homeMenuItem"><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+</ul>
+<!--#endregion Navigation bar-->
+
+<!--#region Main Page-->
+<h1 id="pageTitle">LOGOS</h1>
+
+<div id="pageEven">
+    <h3 style="flex-basis:75%; padding:0% 1%">Logos represent your company and act as the heart of your branding. Your logo should tell a story about what your company does, is and stands for.</h3>
+    <img src="~/images/logoMaking.jpg" alt="Company image" height="25%" width="25%"/>
+</div>
+
+<div id="pageOdd">
+    <img src="~/images/logoMaking2.jpg" alt="Company image" height="25%" width="25%"/>
+    <h3 style="flex-basis:75%; padding:0% 1%"> A logo might seem like a small addition to your company but it can have huge effects on growth and prosperity.<br>We can make you stand out.</h3>
+</div>   
+
+<h1 id="pageSecondaryTitle">EXAMPLES FROM SOME LOGOS WE CREATED</h1>
+<div id="pageEven">
+    <img class="photo30" src="~/images/logo1.jpg" alt="Company image" style="margin: 0% 0.25% 0% 0%"/>
+    <img class="photo30" src="~/images/logo2.jpg" alt="Company image"/>
+    <img class="photo30" src="~/images/logo3.jpg" alt="Company image" style="margin: 0% 0% 0% 0.25%"/>
+</div>
+<!--#endregion Main Page-->

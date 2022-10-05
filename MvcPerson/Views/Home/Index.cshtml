@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--#region Navigation bar-->
+<ul id="menuList">
+    <li class="menuListItem"><a asp-area=""  asp-controller="Countries" asp-action="Index">Contact</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="News">News</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
+    <li class="servicesItem">
+        <a href="#services" class="servicesButton" style="pointer-events: none;">Services</a>
+        <div class="servicesDropdown">
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Logos">Logos</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Websites">Websites</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Prints">Prints</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Photography">Photography</a>
+        </div>
+    </li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="events">Events</a></li>
+    <li class="activeHomeMenuItem"><a>Home</a></li>
+</ul>
+<!--#endregion Navigation bar-->
+
+<!--#region Main Page-->
+    <h1 id="pageTitle">MYBESTCOMPANY</h1>
+
+    <div id="pageEven">
+        <h3 class="textSide">We are a full-service graphic design company with a passion for conceptually driven strategic design and delivering a positive presence for your company on the internet and in print.</h3>
+        <img class="photoSide" src="~/images/graphicDesignCompany.jpg" alt="Company image"/>
+    </div>
+
+    <div id="pageOdd">
+        <img class="photoSide" src="~/images/handshake.jpg" alt="Company image" height="25%" width="25%"/>
+        <h3 class="textSide">At MyBestCompany our goals are all about helping you meet and beat your goals.<br>When you succeed we succeed. It’s that simple.</h3>
+    </div>   
+    
+    <div id="pageEven">
+        <h3 class="textSide">Our collaborative group has a decades worth of professional experience in branding, logos, websites, print, photography and fine-arts; offering a full range of services.<br>Ask freely for our services and check our photo gallery of old jobs.</h3>
+        <img class="photoSide" src="~/images/professionalExperience.jpg" alt="Company image" height="25%" width="25%"/>
+    </div>
+    <!--#endregion Main Page-->
+    

@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "About Us";
+}
+
+<!--#region Navigation bar-->
+<ul id="menuList">
+    <li class="menuListItem"><a asp-area=""  asp-controller="Countries" asp-action="Index">Contact</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="News">News</a></li>
+    <li class="activeMenuListItem"><a>About us</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
+    <li class="servicesItem">
+        <a href="#services" class="servicesButton" style="pointer-events: none;">Services</a>
+        <div class="servicesDropdown">
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Logos">Logos</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Websites">Websites</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Prints">Prints</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Photography">Photography</a>
+        </div>
+    </li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="events">Events</a></li>
+    <li class="homeMenuItem"><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+</ul>
+<!--#endregion Navigation bar-->
+
+<!--#region Main Page-->
+    <h1 id="pageTitle">LEARN MORE ABOUT US!</h1>
+    <div style="display:flex;">
+        <div class="aboutUsCardEven" style="flex-basis: 50%; margin:1% 1%">
+            <img class="aboutUsPic" src="~/images/antoineHennache.jpg" alt="Antoine Hennache CEO"/>
+            <h3 class="aboutUsTxt">Meet Antoine Hennache, our CEO</h3>
+        </div>
+        <div class="aboutUsCardOdd" style="flex-basis: 50%; margin: 1% 1%">
+            <img class="aboutUsPic" src="~/images/hideoKojima.jpg" alt="Company image"/>
+            <h3 class="aboutUsTxt">Meet Hideo Kojima, our digital design team leader</h3>
+        </div>
+    </div>
+    
+    <div style="display:flex;">
+        <div class="aboutUsCardOdd" style="flex-basis: 50%; margin:1% 1%">
+            <img class="aboutUsPic" src="~/images/pascal.jpg" alt="Antoine Hennache CEO"/>
+            <h3 class="aboutUsTxt">Meet Pascal Cerezo, our web master</h3>
+        </div>
+        <div class="aboutUsCardEven" style="flex-basis: 50%; margin: 1% 1%">
+            <img class="aboutUsPic" src="~/images/comingSoon.jpg" alt="Company image"/>
+            <h3 class="aboutUsTxt">We are hiring new employees.<br> Write us if you are interested!</h3>
+        </div>
+    </div>
+<!--#endregion Main Page-->

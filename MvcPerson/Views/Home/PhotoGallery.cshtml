@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Photo Gallery";
+}
+
+<!--#region Navigation bar-->
+<ul id="menuList">
+    <li class="menuListItem"><a asp-area=""  asp-controller="Countries" asp-action="Index">Contact</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="News">News</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
+    <li class="activeMenuListItem"><a>Photo Gallery</a></li>
+    <li class="servicesItem">
+        <a href="#services" class="servicesButton" style="pointer-events: none;">Services</a>
+        <div class="servicesDropdown">
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Logos">Logos</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Websites">Websites</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Prints">Prints</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Photography">Photography</a>
+        </div>
+    </li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="events">Events</a></li>
+    <li class="homeMenuItem"><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+</ul>
+<!--#endregion Navigation bar-->
+
+<!--#region Main Page-->
+<h1 id="pageTitle">SEE OUR FINISHED PROJECTS</h1>
+<div id="pageEven">
+    <img class="photo30" src="~/images/photoGalleryWebsite1.jpg" alt="Company image" style="padding-right:1%"/>
+    <img class="photo30" src="~/images/cocaLogo.jpg" alt="Company image" style="padding-right:1%"/>
+    <img class="photo30" src="~/images/patagoniaLogo.png" alt="Company image" />
+</div>
+
+<div id="pageOdd">
+    <h3 class="text30">Web design for the company JustInvented®</h3>   
+    <h3 class="text30">Logo design for the company Nike®</h3>   
+    <h3 class="text30">Logo design for the company Patagonia®</h3>  
+</div>
+
+<div id="pageEven">
+    <img class="photo30" src="~/images/wedding.jpg" alt="Company image" width="33%" height="33%" style="padding-right: 1%;"/>
+    <img class="photo30" src="~/images/flyer.png" alt="Company image" width="33%" height="33%" style="padding-right: 1%;"/>
+    <img class="photo30" src="~/images/comingSoon.jpg" alt="Company image" width="33%" height="33%"/>
+</div>
+
+<div id="pageOdd">
+    <h3 class="text30">Photography project for a wedding</h3>   
+    <h3 class="text30">Flyer for Lorem Ipsum store</h3>   
+    <h3 class="text30">More projects coming soon...</h3>  
+</div>
+<!--#endregion Main Page-->

@@ -1,0 +1,584 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+/*#region NavigationMenu*/
+#menuList{
+    position: fixed;
+    top: 0;
+    width: 99%;
+    list-style-type: none;
+    margin-left: -6.5%;
+    padding: 0;
+    border-bottom: 1px solid white;
+    font-size: 13pt;
+    background-color: #333;
+    z-index: 1;
+}
+
+/*#region DefaultMenuItems*/
+.menuListItem {
+    float: right;
+    border-right:1px solid #bbb;
+    border-left:1px solid #bbb;
+}
+.menuListItem a, .servicesButton {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.menuListItem a:hover:not(.active), .servicesButton:hover, .servicesDropdown a:hover{
+    background-color: #111;
+}
+/*#endregion DefaultMenuItems*/
+
+/*#region ActiveMenuItems*/
+.activeMenuListItem{
+    float: right;
+    background-color: rgb(187, 255, 0);
+    border-right: 1px solid rgb(187, 255, 0);
+    border-left:1px solid rgb(187, 255, 0)
+}
+.activeMenuListItem a{
+    display: block;
+    color: rgb(20, 36, 15);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.activeMenuListItem a:hover:not(.active), .activeServicesButton:hover {
+    color: white;
+    background-color: rgb(56, 73, 7);
+}
+/*#endregion ActiveMenuItems*/
+
+/*#region HomeMenuItem*/
+.homeMenuItem {
+    float: left;
+    border-right:1px solid #bbb;
+    border-left:1px solid #bbb;
+}
+.homeMenuItem a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.homeMenuItem a:hover:not(.active) {
+    background-color: #111;
+}
+/*#endregion HomeMenuItem*/
+
+/*#region ActiveHomeMenuItem*/
+.activeHomeMenuItem {
+    float: left;
+    background-color: rgb(187, 255, 0);
+    border-right:1px solid rgb(187, 255, 0);
+    border-left:1px solid #bbb;
+}
+.activeHomeMenuItem a {
+    display: block;
+    color: rgb(20, 36, 15);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.activeHomeMenuItem a:hover {
+    color: white;
+    background-color: rgb(56, 73, 7);
+}
+/*#endregion ActiveHomeMenuItem*/
+
+/*#region ServicesButton*/
+.servicesItem{
+    float: right;
+}
+
+.servicesDropdown {
+    display: none;
+    position: fixed;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+  
+.servicesDropdown a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.servicesItem:hover .servicesDropdown{
+    display: block;
+}
+/*#endregion ServicesButton*/
+
+/*#region ActiveServicesButton*/
+.activeServicesButton {
+    display: block;
+    color: black;
+    background-color: rgb(187, 255, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.servicesDropdown .activeDropDownItem{
+    color: black;
+    background-color: rgb(187, 255, 0);
+}
+
+.servicesDropdown .activeDropDownItem:hover {
+    color: white;
+    background-color: rgb(56, 73, 7);
+}
+/*#endregion ActiveServicesButton*/
+
+/*#endregion NavigationMenu*/
+
+/*#region Footer*/
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    background-color: #333;
+    border-collapse: collapse;
+    border: 3px solid rgb(187, 255, 0);
+    color: white;
+    text-align: center;
+    font-size: 10.1pt;
+    margin-top: 10px;
+}
+
+#footerTitle {
+    flex-basis: 100%;
+    font-size:30px;
+    border-bottom: 3px solid rgb(187, 255, 0);
+    margin: 0;
+    padding: 1% 0 1% 0;
+}
+
+#footerSocialNetwork {
+    float: left;
+    font-size: 20px;
+    flex-basis: 35%;
+    padding: 1%;
+}
+
+#footerForm {
+    float: left;
+    flex-basis: 65%;
+    text-align: left;
+    border-right: 3px solid rgb(187, 255, 0);
+    padding: 1%;
+}
+
+#footerForm label{
+    display: inline-block;
+    width: 95px;
+}
+
+#footerForm input,#footerForm select{
+    box-sizing: border-box;
+    width: calc(100% - 100px);
+}
+
+#footerForm textarea {
+    width: 98.5%;
+}
+
+#footerForm #submitFooterForm {
+    width: 100%;
+}
+/*#endregion Footer*/
+
+/*#region Page*/
+/*#region DefaultPage*/
+#pageTitle {
+    position: relative;
+    margin-top: 11.5%;
+    margin-bottom: 0%;
+    text-align: center;
+    background-color: rgb(187, 255, 0);
+    color: black;
+    padding: 5px 2px;
+    flex-basis: 100%;
+    font-size: 25pt;
+}
+
+#pageSecondaryTitle {
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    text-align: center;
+    background-color: rgb(187, 255, 0);
+    color: black;
+    padding: 5px 2px;
+    flex-basis: 100%;
+    font-size: 25pt;
+}
+
+#pageEven {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 1%;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 5px 2px
+}
+
+#pageOdd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 1%;
+    text-align: center;
+    background-color: #666;
+    color: white;
+    padding: 5px 3px
+}
+
+#blankSpace {
+    margin-top:7%;
+}
+
+.photoSide {
+    width: 25%;
+    height: 20vw;
+    padding: 0% 1%;
+}
+
+.textSide {
+    flex-basis:75%;
+    padding: 0% 1%;
+}
+
+.eventTextSide {
+    flex-basis:75%;
+    padding: 0% 1%;
+    font-size: 18pt;
+}
+
+/*#endregion DefaultPage*/
+/*#region GalleryPage*/
+.photo30 {
+    width: 33%;
+    height: 35vw;
+}
+
+.photo30Tall {
+    width: 33%;
+    height: 40vw;
+}
+
+.text30 {
+    flex-basis:33%;
+    font-size:14pt;
+    padding: 0% 1%;
+}
+
+.div30Dark {
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 5px 2px;
+    margin: 1% 1%;  
+}
+
+.div30Light {
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+    background-color: #666;
+    color: white;
+    padding: 5px 2px;
+    margin: 1% 1%;     
+}
+
+.eventImg {
+    width: 95%;
+    height: 25vw;
+    margin-bottom: 2%;
+}
+/*#endregion GalleryPage*/
+/*#region AboutUsPage*/
+.aboutUsCardEven {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    margin-top: 1%;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1% 1%;
+}
+
+.aboutUsCardOdd {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    margin-top: 1%;
+    text-align: center;
+    background-color: #666;
+    color: white;
+    padding: 1% 1%;
+}
+
+.aboutUsPic{
+    width: 100%;
+    height: 45vw;
+}
+
+.aboutUsTxt {
+    font-size: 18pt;
+}
+/*#endregion AboutUsPage*/
+/*#region NewsPage*/
+.newsTitle {
+    flex-basis: 30%;
+}
+
+.newsImg {
+    width: 100%;
+    padding: 1%;
+}
+
+.newsTxt {
+    font-size: 16pt;
+    flex-basis:70%;
+    padding:0% 1%
+}
+
+.newsDate {
+    font-style: italic;
+    font-size: 14pt;
+}
+/*#endregion NewsPage*/
+/*#endregion Page*/
+
+/*#region On screens that are less than 620 px (tablet)*/
+@media screen and (max-width: 620px) {
+    /*#region NavigationMenu*/
+    .menuListItem, .activeMenuListItem, .homeMenuItem, .activeHomeMenuItem{
+        float: none;
+        width: 100%;
+    }
+
+    .servicesItem {
+        float: none;
+        visibility: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        position:relative;
+    }
+
+    #menuList {
+        margin: 0% 0% 0% -7.5px;
+        font-size: 11pt;
+    }
+
+    .servicesDropdown{
+        visibility: visible;
+        display: flex;
+        width: 98%;
+    }
+    .servicesItem:hover .servicesDropdown{
+        display:flex;
+        width: 98%;
+    }
+
+    .dropDownItem, .activeDropDownItem {
+        float:left;
+        flex-basis: 25%;
+    }
+    /*#endregion NavigationMenu*/
+    /*#region Footer*/
+    #footerSocialNetwork {
+        flex-basis: 100%;
+    }
+
+    #footerForm {
+        flex-basis: 100%;
+        border-right: none;
+        border-bottom: 3px solid rgb(187, 255, 0);
+    }
+    /*#endregion Footer*/
+    /*#region DefaultPage*/
+    #pageTitle{
+        margin-top:77%;
+        font-size: 20pt;
+    }
+
+    #pageSecondaryTitle {
+        margin-top:5%;
+        font-size:20pt;
+    }
+
+    #pageEven, #pageOdd {
+        font-size:12pt;
+    }
+
+    #blankSpace {
+        margin-top:73%;
+    }    
+
+    .photoSide {
+        height: 34vw;
+        width: 30%;
+    }
+
+    .textSide{
+        flex-basis:70%;
+        padding: 0% 1%
+    }
+
+    .eventTextSide {
+        font-size: 16pt;
+        flex-basis:70%;
+        padding: 0% 1%
+    }
+    /*#endregion DefaultPage*/
+    /*#region GalleryPage*/
+    .photo30 {
+        height: 30vw;
+    }
+    
+    .text30 {
+        font-size:12pt;
+    }
+
+    .div30Dark, .div30Light {
+        font-size: 12pt;
+    }
+    /*#endregion GalleryPage*/
+    /*#region AboutUsPage*/  
+    .aboutUsPic{
+        height: 42vw;
+    }
+
+    .aboutUsTxt {
+        font-size: 14pt;
+    }
+    /*#endregion AboutUsPage*/
+    /*#region NewsPage*/
+    .newsTxt {
+        font-size: 14pt;
+    }
+
+    .newsDate {
+        font-size: 10pt;
+    }
+    /*#endregion NewsPage*/
+}
+/*#endregion On screens that are less than 620 px (tablet)*/
+
+/*#region On screens thar are wider than 1100 px (desktop)*/
+@media screen and (min-width: 1100px) {
+    /*#region NavigationMenu*/
+    #menuList {
+        font-size: 17pt;
+    }
+    /*#endregion NavigationMenu*/
+    /*#region DefaultPage*/
+    #pageEven, #pageOdd {
+        font-size: 22pt;
+    }
+
+    #pageTitle {
+        font-size: 40pt;
+        margin: 6% 0% 0% 0%;
+    }
+
+    #footerTitle {
+        font-size: 32pt;
+    }
+
+    #footerSocialNetwork {
+        font-size: 22pt;
+    }
+
+    #request {
+        height: 18em;
+    }
+
+    #blankSpace {
+        margin-top:5%;
+    }
+
+    .photoSide {
+        height: 22vw;
+    }
+
+    .textSide {
+        font-size: 24pt;
+    }
+
+    .eventTextSide {
+        font-size: 34pt;
+    }
+    /*#endregion DefaultPage*/
+    /*#region GalleryPage*/
+    .photo30 {
+        height: 32vw;
+    }
+    
+    .text30 {
+        font-size:26pt;
+    }
+
+    .div30Dark, .div30Light {
+        font-size: 20pt;
+    }
+    /*#endregion GalleryPage*/
+    /*#region AboutUsPage*/
+    .aboutUsPic{
+        height: 45vw;
+    }
+
+    .aboutUsTxt {
+        font-size: 24pt;
+    }
+    /*#endregion AboutUsPage*/
+    /*#region NewsPage*/
+    .newsTxt {
+        font-size: 28pt;
+    }
+
+    .newsDate {
+        font-size: 18pt;
+    }
+    /*#endregion NewsPage*/
+}
+/*#endregion On screens that are wider than 1100 px (desktop)*/

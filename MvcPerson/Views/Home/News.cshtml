@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "News";
+}
+
+<!--#region Navigation bar-->
+<ul id="menuList">
+    <li class="menuListItem"><a asp-area=""  asp-controller="Countries" asp-action="Index">Contact</a></li>
+    <li class="activeMenuListItem"><a>News</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
+    <li class="servicesItem">
+        <a href="#services" class="servicesButton" style="pointer-events: none;">Services</a>
+        <div class="servicesDropdown">
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Logos">Logos</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Websites">Websites</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Prints">Prints</a>
+            <a class="dropDownItem" asp-area="" asp-controller="Home" asp-action="Photography">Photography</a>
+        </div>
+    </li>
+    <li class="menuListItem"><a asp-area="" asp-controller="Home" asp-action="events">Events</a></li>
+    <li class="homeMenuItem"><a asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+</ul>
+<!--#endregion Navigation bar-->
+
+<!--#region Main Page-->
+    <h1 id="pageTitle">NEWS BOARD</h1>
+    <div id="pageEven">
+        <div class="newsTitle">
+            <img class="newsImg" src="~/images/news1.jpg" alt="Company image"/>
+            <h3 class="newsDate">Friday, August 26.<br>Information</h3>
+        </div>
+        <h3 class="newsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+    </div>
+
+    <div id="pageOdd">
+        <h3 class="newsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+        <div class="newsTitle">
+            <img class="newsImg" src="~/images/news2.jpg" alt="Company image"/>
+            <h3 class="newsDate">Monday, August 29.<br>Newcomming</h3>
+        </div>
+    </div>   
+    
+    <div id="pageEven">
+        <div class="newsTitle">
+            <img class="newsImg" src="~/images/news3.jpg" alt="Company image"/>
+            <h3 class="newsDate">Thursday, September 1.<br>Information</h3>
+        </div>
+        <h3 class="newsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+    </div>
+<!--#endregion Main Page-->
