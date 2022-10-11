@@ -6,4 +6,8 @@ public class CurrentAccount extends Account{
 		super(l, c);
 	}
 	
+	public CurrentAccount(String l, Client c, float b) {
+		super(l, c, b);
+	}
+	
 }

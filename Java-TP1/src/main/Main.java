@@ -40,6 +40,9 @@ public class Main {
 		//Load the flow operations
 		flowList = generateFlows(accountList);
 		//Update accounts with flows
+		executeFlows(accountList, flowList);
+		//Display accounts
+		displayAccountsBalance(listToHash(accountList));
 	}
 	
 	private static ArrayList<Client> generateClients(long numClients){
@@ -65,9 +68,11 @@ public class Main {
 		//Create a new account for each client
 		for (int i = 0; i < clientList.size(); i++) {
 			if(i%2 == 0)
-				auxArray.add(new CurrentAccount("CurrentAccount" + i, clientList.get(i)));
+				//auxArray.add(new CurrentAccount("CurrentAccount" + i, clientList.get(i)));
+				auxArray.add(new CurrentAccount("CurrentAccount" + i, clientList.get(i), 500f));
 			else
-				auxArray.add(new SavingsAccount("Savings Account" + i, clientList.get(i)));
+				//auxArray.add(new SavingsAccount("Savings Account" + i, clientList.get(i)));
+				auxArray.add(new SavingsAccount("Savings Account" + i, clientList.get(i), 500f));
 		}
 			
 		//Return the array
@@ -128,5 +133,11 @@ public class Main {
 		
 		//Return array
 		return auxList;
+	}
+
+	private static void executeFlows(ArrayList<Account> accountList, ArrayList<Flow> flowList) {
+		//Get account from each flow, and modify it in the list
+		for(Flow f : flowList)
+			accountList.get(accountList.indexOf(f.getTargetAccount())).modifyBalance(f);
 	}
 }
