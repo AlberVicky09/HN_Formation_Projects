@@ -9,9 +9,9 @@ public class Transfert extends Flow{
 	private Account originAccount;
 
 	//Constructor
-	public Transfert(long iD, String comment, float amount, Account targetAccount, boolean effect, LocalDate date,
+	public Transfert(long iD, String comment, float amount, Account targetAccount, LocalDate date,
 			Account originAccount) {
-		super(iD, comment, amount, targetAccount, effect, date);
+		super(iD, comment, amount, targetAccount, date);
 		this.originAccount = originAccount;
 	}
 

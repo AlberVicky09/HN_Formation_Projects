@@ -6,8 +6,8 @@ import components.Account;
 
 public class Debit extends Flow{
 
-	public Debit(long iD, String comment, float amount, Account targetAccount, boolean effect, LocalDate date) {
-		super(iD, comment, amount, targetAccount, effect, date);
+	public Debit(long iD, String comment, float amount, Account targetAccount, LocalDate date) {
+		super(iD, comment, amount, targetAccount, date);
 	}
 
 }
