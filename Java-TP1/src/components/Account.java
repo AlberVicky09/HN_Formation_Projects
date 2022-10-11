@@ -49,14 +49,6 @@ public abstract class Account {
 		this.clientData = clientData;
 	}
 
-	public long getAccountCounter() {
-		return accountCounter;
-	}
-
-	public void setAccountCounter(long accountCounter) {
-		this.accountCounter = accountCounter;
-	}
-
 	@Override
 	public String toString() {
 		return "Account [label=" + label + ", balance=" + balance + ", accountNumber=" + accountNumber + ", clientData="

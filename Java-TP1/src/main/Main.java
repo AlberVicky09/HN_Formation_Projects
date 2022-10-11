@@ -1,6 +1,10 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+
 import components.*;
 
 public class Main {
@@ -9,7 +13,9 @@ public class Main {
 		//Declare array of clients
 		ArrayList<Client> clientList;
 		//Declare array of accounts
-		ArrayList<Account> accountList;		
+		ArrayList<Account> accountList;
+		//Declare hashtable of accounts
+		HashMap<Long, Account> accountHash;
 		
 		//Load the clients
 		clientList = generateClients(Math.round(Math.random()*100));
@@ -20,6 +26,11 @@ public class Main {
 		accountList = generateAccounts(clientList);
 		//Display accounts
 		displayAccounts(accountList);
+		
+		//Pass accounts to hash
+		accountHash = listToHash(accountList);
+		//Display accounts in balance order
+		displayAccountsBalance(accountHash);
 	}
 	
 	private static ArrayList<Client> generateClients(long numClients){
@@ -54,5 +65,30 @@ public class Main {
 		//Iterate through accounts
 		for (Account account : accountList)
 			System.out.println(account.toString());
+	}
+
+	private static HashMap<Long, Account> listToHash(ArrayList<Account> accountList){
+		//Create aux hashMap
+		HashMap<Long, Account> auxMap = new HashMap<Long, Account>();
+		
+		//Add each account to map
+		for(Account a : accountList)
+			auxMap.put(a.getAccountNumber(), a);
+		
+		//Return map
+		return auxMap;
+	}
+
+	private static void displayAccountsBalance(HashMap<Long, Account> accountHash) {
+		//Create an aux treemap with balance as key
+		TreeMap<Float, Account> auxMap = new TreeMap<Float, Account>();
+		
+		//Fill aux map with accounts
+		for(Long key : accountHash.keySet()) 
+			auxMap.put(accountHash.get(key).getBalance(), accountHash.get(key));
+
+		//Display map
+		for(Entry<Float, Account> acc : auxMap.entrySet())
+			System.out.println(acc.getValue().toString());
 	}
 }
