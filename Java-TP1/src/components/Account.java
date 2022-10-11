@@ -1,5 +1,7 @@
 package components;
 
+import operations.Flow;
+
 public abstract class Account {
 	//Attributes
 	protected String label;
@@ -28,9 +30,13 @@ public abstract class Account {
 	public float getBalance() {
 		return balance;
 	}
-
+	
 	public void setBalance(float balance) {
 		this.balance = balance;
+	}
+
+	public void addBalance(Flow operation) {
+		this.balance += operation.getAmount();
 	}
 
 	public long getAccountNumber() {
