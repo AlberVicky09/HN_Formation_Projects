@@ -9,5 +9,9 @@ public class SavingsAccount extends Account{
 	public SavingsAccount(String l, Client c, float b) {
 		super(l, c, b);
 	}
+	
+	public SavingsAccount(String l, Client c, long n, float b) {
+		super(l, c, n, b);
+	}
 
 }

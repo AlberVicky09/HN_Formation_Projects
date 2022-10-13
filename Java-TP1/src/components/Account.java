@@ -10,7 +10,7 @@ public abstract class Account {
 	protected float balance;
 	protected long accountNumber;
 	protected Client clientData;
-	private long accountCounter = 0;
+	private static long accountCounter = 0;
 	
 	private Predicate<Float> negativeBalance = i -> (i < 0);
 	
@@ -25,6 +25,12 @@ public abstract class Account {
 		this.label = l;
 		this.balance = b;
 		this.accountNumber = ++accountCounter;
+		this.clientData = c;
+	}
+	public Account(String l, Client c, long n, float b) {
+		this.label = l;
+		this.balance = b;
+		this.accountNumber = n;
 		this.clientData = c;
 	}
 

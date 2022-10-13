@@ -1,10 +1,18 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+import com.google.gson.*;
 
 import components.*;
 import operations.*;
@@ -59,6 +67,7 @@ public class Main {
 		//Iterate through all clients
 		for (Client client : clientList)
 			System.out.println(client.toString());
+		System.out.println("_________________________________________");
 	}
 
 	private static ArrayList<Account> generateAccounts(ArrayList<Client> clientList){
@@ -68,11 +77,11 @@ public class Main {
 		//Create a new account for each client
 		for (int i = 0; i < clientList.size(); i++) {
 			if(i%2 == 0)
-				//auxArray.add(new CurrentAccount("CurrentAccount" + i, clientList.get(i)));
-				auxArray.add(new CurrentAccount("CurrentAccount" + i, clientList.get(i), 500f));
+				//auxArray.add(new CurrentAccount("CurrentAccount " + i, clientList.get(i)));
+				auxArray.add(new CurrentAccount("CurrentAccount" + i, clientList.get(i), 10f * i));
 			else
-				//auxArray.add(new SavingsAccount("Savings Account" + i, clientList.get(i)));
-				auxArray.add(new SavingsAccount("Savings Account" + i, clientList.get(i), 500f));
+				//auxArray.add(new SavingsAccount("Savings Account " + i, clientList.get(i)));
+				auxArray.add(new SavingsAccount("Savings Account" + i, clientList.get(i), 10f * i));
 		}
 			
 		//Return the array
@@ -83,6 +92,7 @@ public class Main {
 		//Iterate through accounts
 		for (Account account : accountList)
 			System.out.println(account.toString());
+		System.out.println("_________________________________________");
 	}
 
 	private static HashMap<Long, Account> listToHash(ArrayList<Account> accountList){
@@ -108,6 +118,7 @@ public class Main {
 		//Display map
 		for(Entry<Float, Account> acc : auxMap.entrySet())
 			System.out.println(acc.getValue().toString());
+		System.out.println("_________________________________________");
 	}
 
 	private static ArrayList<Flow> generateFlows(ArrayList<Account> accountList){
@@ -139,5 +150,47 @@ public class Main {
 		//Get account from each flow, and modify it in the list
 		for(Flow f : flowList)
 			accountList.get(accountList.indexOf(f.getTargetAccount())).modifyBalance(f);
+	}
+
+	private ArrayList<Flow> readFlowFileJSON() {
+		//Generate auxiliar array
+		ArrayList<Flow> auxList = new ArrayList<Flow>();
+		//Use Gson
+		Gson gson = new Gson();
+		
+		//Get path to file
+		Path filePath = Paths.get("/files/flows.txt");
+		//Fetch file from path
+		try(BufferedReader reader = Files.newBufferedReader(filePath, StandardCharsets.UTF_8)){	       
+			//While there are still lines left, keep reading
+			String currentLine = null;
+			while((currentLine = reader.readLine()) != null){
+				//Parse the line as a Flow object
+				auxList.add(gson.fromJson(currentLine, Flow.class));
+			}
+		//Exception if no file existing
+	    }catch(IOException ex){
+	    	ex.printStackTrace();
+	    }
+		
+		//Return list
+		return auxList;
+    }
+	
+	private void writeFlowFileJSON(ArrayList<Flow> flowList) {
+		//Use Gson
+		Gson gson = new Gson();
+		
+		//Get path to file
+		Path filePath = Paths.get("/files/flows.txt");
+		//Write untill there are flows remaining
+		try(BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8)){
+			for(int i = 0; i < flowList.size(); i++) {
+				Flow currentFlow = flowList.get(i);
+				writer.write(gson.toJson(currentFlow));
+			}
+		}catch(IOException ex) {
+			ex.printStackTrace();
+		}
 	}
 }
