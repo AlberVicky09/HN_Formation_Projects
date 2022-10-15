@@ -167,12 +167,15 @@ public class Main {
 		ArrayList<Flow> auxList = new ArrayList<Flow>();
 				
 		//Get path to file
-		Path filePath = Paths.get("src/files/flows.txt");
+		Path filePath = Paths.get("src/files/flows.json");
 		//Fetch file from path
 		try(BufferedReader reader = Files.newBufferedReader(filePath, StandardCharsets.UTF_8)){	       
 			//While there are still lines left, keep reading
 			String currentLine, tarAccount, orAccount, tarCli, orCli = null;
-			while((currentLine = reader.readLine()) != null){
+			reader.readLine();
+			while((currentLine = reader.readLine()) != null && !currentLine.equals("]")){
+				//Keep only the number
+				currentLine = currentLine.substring(currentLine.indexOf(":") + 1, currentLine.length() - 1);
 				//Check what kind of Flow it is
 				if(currentLine.equals("0")) {
 					//Parse the line as a Credit object
@@ -290,23 +293,26 @@ public class Main {
 	//Parse array of flows into JSON
 	private static void writeFlowFileJSON(ArrayList<Flow> flowList) {	
 		//Get path to file
-		Path filePath = Paths.get("src/files/flows.txt");
+		Path filePath = Paths.get("src/files/flows.json");
 		//Write while there are flows remaining
 		try(BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8)){
+			writer.write("[" + System.lineSeparator());
 			for(Flow currentFlow : flowList) {
+				writer.write("{type:");
 				//Write a int to know what type of flow it is
 				if(currentFlow instanceof Credit)
-					writer.write("0" + System.lineSeparator());
+					writer.write("0}" + System.lineSeparator());
 				else if(currentFlow instanceof Debit)
-					writer.write("1" + System.lineSeparator());
+					writer.write("1}" + System.lineSeparator());
 				else if(currentFlow instanceof Transfert)
-					writer.write("2" + System.lineSeparator());
+					writer.write("2}" + System.lineSeparator());
 				else {
 					System.out.println("Not a known flow");
 					return;
 				}
 				writer.write(currentFlow.toJSONString() + System.lineSeparator());
 			}
+			writer.write("]");
 		}catch(IOException ex) {
 			ex.printStackTrace();
 		}
