@@ -1,9 +1,5 @@
 package components;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement(name="client")
 public class Client {
 	//Atributes
 	private String name;
@@ -29,7 +25,6 @@ public class Client {
 		return name;
 	}
 
-	@XmlElement(name= "name")
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -38,7 +33,6 @@ public class Client {
 		return firstName;
 	}
 
-	@XmlElement(name= "firstName")
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -47,7 +41,6 @@ public class Client {
 		return clientNumber;
 	}
 
-	@XmlElement(name= "clientNumber")
 	public void setClientNumber(long clientNumber) {
 		this.clientNumber = clientNumber;
 	}
@@ -59,5 +52,11 @@ public class Client {
 	
 	public String toJSONString() {
 		return "{name:" + this.name + ";firstName:" + this.firstName + ";clientNumber:" + this.clientNumber + "}";
+	}
+	
+	public String toXMLString() {
+		return "\t\t\t<name>" + name + "</name>" + System.lineSeparator() +
+				"\t\t\t<firstName>" + firstName + "</firstName>" + System.lineSeparator() +
+				"\t\t\t<clientNumber>" + clientNumber + "</clientNumber>";
 	}
 }

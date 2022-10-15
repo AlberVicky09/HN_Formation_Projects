@@ -2,13 +2,8 @@ package components;
 
 import java.util.function.Predicate;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-
 import operations.*;
 
-@XmlRootElement(name = "account")
 public abstract class Account {
 	//Attributes
 	protected String label;
@@ -69,7 +64,6 @@ public abstract class Account {
 		return label;
 	}
 
-	@XmlElement(name="label")
 	public void setLabel(String label) {
 		this.label = label;
 	}
@@ -78,7 +72,6 @@ public abstract class Account {
 		return balance;
 	}
 	
-	@XmlElement(name="balance")
 	public void setBalance(float balance) {
 		this.balance = balance;
 	}
@@ -87,7 +80,6 @@ public abstract class Account {
 		return accountNumber;
 	}
 
-	@XmlElement(name="accountNumber")
 	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
@@ -96,12 +88,10 @@ public abstract class Account {
 		return clientData;
 	}
 
-	@XmlElement(name="client")
 	public void setClientData(Client clientData) {
 		this.clientData = clientData;
 	}
 
-	@XmlTransient
 	public static void setAccountCounter(long a) {
 		accountCounter = a;
 	}
@@ -110,6 +100,15 @@ public abstract class Account {
 	public String toString() {
 		return "Account [label=" + label + ", balance=" + balance + ", accountNumber=" + accountNumber + ", clientData="
 				+ clientData + "]";
+	}
+	
+	public String toXMLString() {
+		return "\t\t<label>" + label + "</label>" + System.lineSeparator() +
+				"\t\t<balance>" + balance + "</balance>" + System.lineSeparator() +
+				"\t\t<accountNumber>" + accountNumber + "</accountNumber>" + System.lineSeparator() +
+				"\t\t<client>" + System.lineSeparator() +
+				clientData.toXMLString() + System.lineSeparator() +
+				"\t\t</client>";
 	}
 	
 	public abstract String toJSONString();

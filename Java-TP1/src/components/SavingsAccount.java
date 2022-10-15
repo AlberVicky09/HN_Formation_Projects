@@ -16,7 +16,7 @@ public class SavingsAccount extends Account{
 	
 	@Override
 	public String toJSONString() {
-		return "{type:savingsAccount;label:" + this.label + ";balance:" + this.balance + ";accountNumber:" + this.accountNumber + ";" +  System.getProperty("line.separator") + "clientData:" + this.clientData.toJSONString() + "}";
+		return "{type:savingsAccount;label:" + this.label + ";balance:" + this.balance + ";accountNumber:" + this.accountNumber + ";" + System.lineSeparator() + "clientData:" + this.clientData.toJSONString() + "}";
 	}
 
 }

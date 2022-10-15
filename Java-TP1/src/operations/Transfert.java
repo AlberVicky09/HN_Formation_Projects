@@ -23,7 +23,7 @@ public class Transfert extends Flow{
 	
 	@Override
 	public String toJSONString() {
-		return "{ID:" + this.getID() + ";comment:" + this.getComment() + ";amount:" + this.getAmount() + ";date:" + this.getDate() + ";" + System.getProperty("line.separator") + "targetAccount:" + this.getTargetAccount().toJSONString() + ";" + System.getProperty("line.separator") + "originAccount:" + this.originAccount.toJSONString() + "}";
+		return "{ID:" + this.getID() + ";comment:" + this.getComment() + ";amount:" + this.getAmount() + ";date:" + this.getDate() + ";" + System.lineSeparator() + "targetAccount:" + this.getTargetAccount().toJSONString() + ";" + System.lineSeparator() + "originAccount:" + this.originAccount.toJSONString() + "}";
 	}
 
 }

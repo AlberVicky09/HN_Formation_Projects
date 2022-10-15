@@ -14,10 +14,6 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-
 import components.*;
 import operations.*;
 
@@ -39,7 +35,9 @@ public class Main {
 		displayClients(clientList);
 		
 		//Load the accounts
-		accountList = generateAccounts(clientList);
+		//accountList = generateAccounts(clientList);
+		//Load accounts from XML file
+		accountList = readAccountFileXML();
 		//Write accounts into XMl
 		writeAccountFileXML(accountList);
 		//Display accounts
@@ -202,6 +200,7 @@ public class Main {
 				}				
 			}
 			System.out.println("Flow file successfuly read. Number of flows: " + auxList.size());
+			System.out.println("_________________________________________");
 		//Exception if no file existing
 	    }catch(IOException ex){
 	    	ex.printStackTrace();
@@ -297,45 +296,111 @@ public class Main {
 			for(Flow currentFlow : flowList) {
 				//Write a int to know what type of flow it is
 				if(currentFlow instanceof Credit)
-					writer.write("0" + System.getProperty("line.separator"));
+					writer.write("0" + System.lineSeparator());
 				else if(currentFlow instanceof Debit)
-					writer.write("1" + System.getProperty("line.separator"));
+					writer.write("1" + System.lineSeparator());
 				else if(currentFlow instanceof Transfert)
-					writer.write("2" + System.getProperty("line.separator"));
+					writer.write("2" + System.lineSeparator());
 				else {
 					System.out.println("Not a known flow");
 					return;
 				}
-				writer.write(currentFlow.toJSONString() + System.getProperty("line.separator"));
+				writer.write(currentFlow.toJSONString() + System.lineSeparator());
 			}
 		}catch(IOException ex) {
 			ex.printStackTrace();
 		}
 	}
 
+	//Read XML file and parse it into arrayList of account
+	private static ArrayList<Account> readAccountFileXML(){
+		//Generate auxiliar array
+		ArrayList<Account> auxList = new ArrayList<Account>();
+				
+		//Get path to file
+		Path filePath = Paths.get("src/files/accounts.xml");
+		//Fetch file from path
+		try(BufferedReader reader = Files.newBufferedReader(filePath, StandardCharsets.UTF_8)){	       
+			//Skip first two lines
+			String currentLine, label, balance, accountNumber, clientName, clientFirstName, clientNumber;
+			reader.readLine(); reader.readLine();
+			//While there are still lines left, keep reading
+			while((currentLine = reader.readLine()) != null && !currentLine.equals("</accounts>")){
+				
+				//Get account info
+				label = reader.readLine();
+				label = removeXMLTags(label);
+				balance = reader.readLine();
+				balance = removeXMLTags(balance);
+				accountNumber = reader.readLine();
+				accountNumber = removeXMLTags(accountNumber);
+				
+				//Skip <client> line
+				clientName = reader.readLine();
+				//Get client info
+				clientName = reader.readLine();
+				clientName = removeXMLTags(clientName);
+				clientFirstName = reader.readLine();
+				clientFirstName = removeXMLTags(clientFirstName);
+				clientNumber = reader.readLine();
+				clientNumber = removeXMLTags(clientNumber);
+				
+				//Create client with data
+				Client c = new Client(clientName, clientFirstName, Long.parseLong(clientNumber));
+				
+				//Get account type and call xmlToAccount with it
+				currentLine = currentLine.substring(currentLine.indexOf("\"") + 1, currentLine.length() - 2);
+				if(currentLine.equals("currentAccount"))
+					auxList.add(new CurrentAccount(label, Float.parseFloat(balance), Long.parseLong(accountNumber), c));
+				else if(currentLine.equals("savingsAccount"))
+					auxList.add(new SavingsAccount(label, Float.parseFloat(balance), Long.parseLong(accountNumber), c));
+				else {
+					System.out.println("Not an account");
+					return auxList;
+				}
+				reader.readLine(); reader.readLine();
+			}
+			System.out.println("Accounts file successfuly read. Number of accounts: " + auxList.size());
+			System.out.println("_________________________________________");
+		}catch(IOException ex) {
+			ex.printStackTrace();
+		}
+		
+		//Return accountList
+		return auxList;
+	}
+	
+	//Remove XML tags in a string
+	private static String removeXMLTags(String line) {
+		return line.substring(line.indexOf(">") + 1, line.indexOf("<", line.indexOf("<") + 1));
+	}
+	
 	//Parse array of Accounts into XML
 	private static void writeAccountFileXML(ArrayList<Account> accountList){
 		//Get path to file
 		Path filePath = Paths.get("src/files/accounts.xml");
 		//Create writter with path
 		try(BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8)){
-			try {
-				//Create context for JAXB library using Accounts class
-				JAXBContext context;
-				context = JAXBContext.newInstance(Accounts.class);
-				//Create marshaller for context
-				Marshaller mar = context.createMarshaller();
-				mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				//Create Accounts object
-				Accounts accounts = new Accounts(accountList);
-				//Marshal accountlist
-				mar.marshal(accounts, writer);
-			//Catch JAXB exception
-			}catch(JAXBException j) {
-				System.out.println(j);
+			//Write head tag
+			writer.write("<?xml version=\"1.0\"?>" + System.lineSeparator());
+			writer.write("<accounts>" + System.lineSeparator());
+			//Write each account as XML
+			for(Account account : accountList) {
+				//Write a int to know what type of flow it is
+				if(account instanceof CurrentAccount) 
+					writer.write("\t<account type=\"currentAccount\">" + System.lineSeparator());
+				else if(account instanceof SavingsAccount)
+					writer.write("\t<account type=\"savingsAccount\">" + System.lineSeparator());
+				else {
+					System.out.println("Not a known account");
+					return;
+				}
+				writer.write(account.toXMLString() + System.lineSeparator());
+				writer.write("\t</account>" + System.lineSeparator());
 			}
-		}catch(IOException e) {
-			System.out.println("IO error:" + e);
+			writer.write("</accounts>");
+		}catch(IOException ex) {
+			ex.printStackTrace();
 		}
 	}
 }

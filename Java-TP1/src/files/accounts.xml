@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<accounts>
+	<account type="currentAccount">
+		<label>CurrentAccount0</label>
+		<balance>0.0</balance>
+		<accountNumber>1</accountNumber>
+		<client>
+			<name>name1</name>
+			<firstName>firstname1</firstName>
+			<clientNumber>1</clientNumber>
+		</client>
+	</account>
+	<account type="savingsAccount">
+		<label>Savings Account1</label>
+		<balance>10.0</balance>
+		<accountNumber>2</accountNumber>
+		<client>
+			<name>name2</name>
+			<firstName>firstname2</firstName>
+			<clientNumber>2</clientNumber>
+		</client>
+	</account>
+	<account type="currentAccount">
+		<label>CurrentAccount2</label>
+		<balance>20.0</balance>
+		<accountNumber>3</accountNumber>
+		<client>
+			<name>name3</name>
+			<firstName>firstname3</firstName>
+			<clientNumber>3</clientNumber>
+		</client>
+	</account>
+	<account type="savingsAccount">
+		<label>Savings Account3</label>
+		<balance>30.0</balance>
+		<accountNumber>4</accountNumber>
+		<client>
+			<name>name4</name>
+			<firstName>firstname4</firstName>
+			<clientNumber>4</clientNumber>
+		</client>
+	</account>
+	<account type="currentAccount">
+		<label>CurrentAccount4</label>
+		<balance>40.0</balance>
+		<accountNumber>5</accountNumber>
+		<client>
+			<name>name5</name>
+			<firstName>firstname5</firstName>
+			<clientNumber>5</clientNumber>
+		</client>
+	</account>
+</accounts>

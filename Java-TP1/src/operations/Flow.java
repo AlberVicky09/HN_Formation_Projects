@@ -61,6 +61,6 @@ public abstract class Flow{
 	}	
 	
 	public String toJSONString() {
-		return "{ID:" + this.ID + ";comment:" + this.comment + ";amount:" + this.amount + ";date:" + this.date + ";" + System.getProperty("line.separator") + "targetAccount:" + this.targetAccount.toJSONString() + "}";
+		return "{ID:" + this.ID + ";comment:" + this.comment + ";amount:" + this.amount + ";date:" + this.date + ";" + System.lineSeparator() + "targetAccount:" + this.targetAccount.toJSONString() + "}";
 	}
 }
