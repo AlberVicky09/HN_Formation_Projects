@@ -6,12 +6,17 @@ public class SavingsAccount extends Account{
 		super(l, c);
 	}
 	
-	public SavingsAccount(String l, Client c, float b) {
-		super(l, c, b);
+	public SavingsAccount(String l, float b, Client c) {
+		super(l, b, c);
 	}
 	
-	public SavingsAccount(String l, Client c, long n, float b) {
-		super(l, c, n, b);
+	public SavingsAccount(String l, float b, long n, Client c) {
+		super(l, b, n, c);
+	}
+	
+	@Override
+	public String toJSONString() {
+		return "{type:savingsAccount;label:" + this.label + ";balance:" + this.balance + ";accountNumber:" + this.accountNumber + ";" +  System.getProperty("line.separator") + "clientData:" + this.clientData.toJSONString() + "}";
 	}
 
 }

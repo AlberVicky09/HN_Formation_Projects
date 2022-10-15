@@ -1,5 +1,7 @@
 package components;
 
+import java.io.Serializable;
+
 public class Client {
 	//Atributes
 	private String name;
@@ -12,6 +14,12 @@ public class Client {
 		this.name = n;
 		this.firstName = fn;
 		this.clientNumber = ++clientCounter;
+	}
+	
+	public Client(String n, String fn, long cn) {
+		this.name = n;
+		this.firstName = fn;
+		this.clientNumber = cn;
 	}
 
 	//Methods
@@ -42,5 +50,9 @@ public class Client {
 	@Override
 	public String toString() {
 		return "Client [name=" + name + ", firstName=" + firstName + ", clientNumber=" + clientNumber + "]";
+	}
+	
+	public String toJSONString() {
+		return "{name:" + this.name + ";firstName:" + this.firstName + ";clientNumber:" + this.clientNumber + "}";
 	}
 }

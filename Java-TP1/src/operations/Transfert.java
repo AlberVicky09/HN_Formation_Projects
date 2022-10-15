@@ -1,7 +1,5 @@
 package operations;
 
-import java.time.LocalDate;
-
 import components.Account;
 
 public class Transfert extends Flow{
@@ -9,9 +7,8 @@ public class Transfert extends Flow{
 	private Account originAccount;
 
 	//Constructor
-	public Transfert(long iD, String comment, float amount, Account targetAccount, LocalDate date,
-			Account originAccount) {
-		super(iD, comment, amount, targetAccount, date);
+	public Transfert(long iD, String comment, float amount, long date, Account targetAccount, Account originAccount) {
+		super(iD, comment, amount, date, targetAccount);
 		this.originAccount = originAccount;
 	}
 
@@ -22,6 +19,11 @@ public class Transfert extends Flow{
 
 	public void setOriginAccount(Account originAccount) {
 		this.originAccount = originAccount;
+	}
+	
+	@Override
+	public String toJSONString() {
+		return "{ID:" + this.getID() + ";comment:" + this.getComment() + ";amount:" + this.getAmount() + ";date:" + this.getDate() + ";" + System.getProperty("line.separator") + "targetAccount:" + this.getTargetAccount().toJSONString() + ";" + System.getProperty("line.separator") + "originAccount:" + this.originAccount.toJSONString() + "}";
 	}
 
 }

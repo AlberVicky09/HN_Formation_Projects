@@ -1,24 +1,22 @@
 package operations;
 
-import java.time.LocalDate;
-
 import components.Account;
 
-public abstract class Flow {
+public abstract class Flow{
 	//Attributes
 	private long ID;
 	private String comment;
 	private float amount;
 	private Account targetAccount;
-	private LocalDate date;
+	private long date;
 	
 	//Constructor
-	public Flow(long iD, String comment, float amount, Account targetAccount, LocalDate date) {
+	public Flow(long iD, String comment, float amount, long date, Account targetAccount) {
 		this.ID = iD;
 		this.comment = comment;
 		this.amount = amount;
-		this.targetAccount = targetAccount;
 		this.date = date;
+		this.targetAccount = targetAccount;
 	}
 
 	//Methods
@@ -54,11 +52,15 @@ public abstract class Flow {
 		this.targetAccount = targetAccount;
 	}
 
-	public LocalDate getDate() {
+	public long getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(long date) {
 		this.date = date;
 	}	
+	
+	public String toJSONString() {
+		return "{ID:" + this.ID + ";comment:" + this.comment + ";amount:" + this.amount + ";date:" + this.date + ";" + System.getProperty("line.separator") + "targetAccount:" + this.targetAccount.toJSONString() + "}";
+	}
 }

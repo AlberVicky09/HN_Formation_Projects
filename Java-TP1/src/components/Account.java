@@ -21,13 +21,13 @@ public abstract class Account {
 		this.accountNumber = ++accountCounter;
 		this.clientData = c;
 	}
-	public Account(String l, Client c, float b) {
+	public Account(String l, float b, Client c) {
 		this.label = l;
 		this.balance = b;
 		this.accountNumber = ++accountCounter;
 		this.clientData = c;
 	}
-	public Account(String l, Client c, long n, float b) {
+	public Account(String l, float b, long n, Client c) {
 		this.label = l;
 		this.balance = b;
 		this.accountNumber = n;
@@ -96,5 +96,7 @@ public abstract class Account {
 	public String toString() {
 		return "Account [label=" + label + ", balance=" + balance + ", accountNumber=" + accountNumber + ", clientData="
 				+ clientData + "]";
-	}	
+	}
+	
+	public abstract String toJSONString();
 }
