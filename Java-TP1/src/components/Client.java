@@ -1,7 +1,9 @@
 package components;
 
-import java.io.Serializable;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name="client")
 public class Client {
 	//Atributes
 	private String name;
@@ -27,6 +29,7 @@ public class Client {
 		return name;
 	}
 
+	@XmlElement(name= "name")
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -35,6 +38,7 @@ public class Client {
 		return firstName;
 	}
 
+	@XmlElement(name= "firstName")
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -43,6 +47,7 @@ public class Client {
 		return clientNumber;
 	}
 
+	@XmlElement(name= "clientNumber")
 	public void setClientNumber(long clientNumber) {
 		this.clientNumber = clientNumber;
 	}

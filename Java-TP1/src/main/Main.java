@@ -14,6 +14,10 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
 import components.*;
 import operations.*;
 
@@ -36,6 +40,8 @@ public class Main {
 		
 		//Load the accounts
 		accountList = generateAccounts(clientList);
+		//Write accounts into XMl
+		writeAccountFileXML(accountList);
 		//Display accounts
 		displayAccounts(accountList);
 		
@@ -286,7 +292,7 @@ public class Main {
 	private static void writeFlowFileJSON(ArrayList<Flow> flowList) {	
 		//Get path to file
 		Path filePath = Paths.get("src/files/flows.txt");
-		//Write untill there are flows remaining
+		//Write while there are flows remaining
 		try(BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8)){
 			for(Flow currentFlow : flowList) {
 				//Write a int to know what type of flow it is
@@ -304,6 +310,32 @@ public class Main {
 			}
 		}catch(IOException ex) {
 			ex.printStackTrace();
+		}
+	}
+
+	//Parse array of Accounts into XML
+	private static void writeAccountFileXML(ArrayList<Account> accountList){
+		//Get path to file
+		Path filePath = Paths.get("src/files/accounts.xml");
+		//Create writter with path
+		try(BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8)){
+			try {
+				//Create context for JAXB library using Accounts class
+				JAXBContext context;
+				context = JAXBContext.newInstance(Accounts.class);
+				//Create marshaller for context
+				Marshaller mar = context.createMarshaller();
+				mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+				//Create Accounts object
+				Accounts accounts = new Accounts(accountList);
+				//Marshal accountlist
+				mar.marshal(accounts, writer);
+			//Catch JAXB exception
+			}catch(JAXBException j) {
+				System.out.println(j);
+			}
+		}catch(IOException e) {
+			System.out.println("IO error:" + e);
 		}
 	}
 }
