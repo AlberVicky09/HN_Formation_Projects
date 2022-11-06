@@ -1,0 +1,32 @@
+[
+{type:1}
+{ID:0;comment:Debit of 50€;amount:50.0;date:1666042486299;
+targetAccount:{type:savingsAccount;label:Savings Account1;balance:10.0;accountNumber:2;
+clientData:{name:name2;firstName:firstname2;clientNumber:2}}}
+{type:0}
+{ID:1;comment:Credit of 100,50€;amount:100.5;date:1666042486299;
+targetAccount:{type:currentAccount;label:CurrentAccount0;balance:0.0;accountNumber:1;
+clientData:{name:name1;firstName:firstname1;clientNumber:1}}}
+{type:0}
+{ID:2;comment:Credit of 1500€;amount:1500.0;date:1666042486299;
+targetAccount:{type:savingsAccount;label:Savings Account1;balance:10.0;accountNumber:2;
+clientData:{name:name2;firstName:firstname2;clientNumber:2}}}
+{type:0}
+{ID:3;comment:Credit of 100,50€;amount:100.5;date:1666042486299;
+targetAccount:{type:currentAccount;label:CurrentAccount2;balance:20.0;accountNumber:3;
+clientData:{name:name3;firstName:firstname3;clientNumber:3}}}
+{type:0}
+{ID:4;comment:Credit of 1500€;amount:1500.0;date:1666042486299;
+targetAccount:{type:savingsAccount;label:Savings Account3;balance:30.0;accountNumber:4;
+clientData:{name:name4;firstName:firstname4;clientNumber:4}}}
+{type:0}
+{ID:5;comment:Credit of 100,50€;amount:100.5;date:1666042486299;
+targetAccount:{type:currentAccount;label:CurrentAccount4;balance:40.0;accountNumber:5;
+clientData:{name:name5;firstName:firstname5;clientNumber:5}}}
+{type:2}
+{ID:6;comment:Transfer of 50 from acc 1 to acc 2;amount:50.0;date:1666042486299;
+targetAccount:{type:savingsAccount;label:Savings Account1;balance:10.0;accountNumber:2;
+clientData:{name:name2;firstName:firstname2;clientNumber:2}};
+originAccount:{type:currentAccount;label:CurrentAccount2;balance:20.0;accountNumber:3;
+clientData:{name:name3;firstName:firstname3;clientNumber:3}}}
+]
