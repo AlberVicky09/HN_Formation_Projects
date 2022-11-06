@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <th scope="col">Movie ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Synopsis</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies let i = index">
+            <td>{{movie.id}}</td>
+            <td (click)="checkMovie(movie)" style="cursor: pointer">{{movie.title}}</td>
+            <td>{{movie.duration}}</td>
+            <td>{{movie.synopsis}}</td>
+            <td><button class="btn btn-warning" type="button" (click)="enterEditMovie(i)">Edit</button></td>
+            <td><button class="btn btn-danger" type="button" (click)="removeMovie(i)">Remove</button></td>
+        </tr>
+    </tbody>
+</table>

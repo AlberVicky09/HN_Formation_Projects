@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <th scope="col">Series ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Number of Seasons</th>
+        <th scope="col">Number of Chapters</th>
+        <th scope="col">Synopsis</th>
+        <th scope="col">Release Date</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of series let i = index">
+            <td>{{s.id}}</td>
+            <td (click)="checkSeries(s)" style="cursor: pointer">{{s.title}}</td>
+            <td>{{s.numSeasons}}</td>
+            <td>{{s.numChapters}}</td>
+            <td>{{s.synopsis}}</td>
+            <td>{{s.releaseDate}}</td>
+            <td><button class="btn btn-warning" type="button" (click)="enterEditSeries(i)">Edit</button></td>
+            <td><button class="btn btn-danger" type="button" (click)="removeSeries(i)">Remove</button></td>
+        </tr>
+    </tbody>
+</table>

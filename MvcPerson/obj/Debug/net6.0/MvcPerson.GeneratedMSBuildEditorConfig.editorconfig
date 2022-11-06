@@ -8,73 +8,73 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MvcPerson
 build_property.RootNamespace = MvcPerson
-build_property.ProjectDir = C:\Users\34610\Documents\Alberto\HN_Formation_Projects\MvcPerson\
+build_property.ProjectDir = c:\Users\34610\Documents\Alberto\HN_Formation_Projects\MvcPerson\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\34610\Documents\Alberto\HN_Formation_Projects\MvcPerson
+build_property.MSBuildProjectDirectory = c:\Users\34610\Documents\Alberto\HN_Formation_Projects\MvcPerson
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Countries/Index.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Countries/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/AboutUs.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/AboutUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Events.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Events.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFdmVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Index.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Logos.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Logos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/News.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/News.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/PhotoGallery.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/PhotoGallery.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQaG90b0dhbGxlcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Photography.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Photography.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQaG90b2dyYXBoeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Prints.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Prints.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmludHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Websites.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Home/Websites.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxXZWJzaXRlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/MainPage/Index.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/MainPage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblBhZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Shared/Error.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/_ViewImports.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/_ViewStart.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Shared/_Layout.cshtml]
+[c:/Users/34610/Documents/Alberto/HN_Formation_Projects/MvcPerson/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-drvmwxrr9l

@@ -1,0 +1,41 @@
+<div *ngIf="type == -1; else otherDisplay">
+    <table class="table">
+        <thead>
+            <th scope="col">Movie ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Synopsis</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{movie.id}}</td>
+                <td>{{movie.title}}</td>
+                <td>{{movie.duration}}</td>
+                <td>{{movie.synopsis}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #otherDisplay>
+    <table class="table">
+        <thead>
+            <th scope="col">Series ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Number of Seasons</th>
+            <th scope="col">Number of Chapters</th>
+            <th scope="col">Synopsis</th>
+            <th scope="col">Release Date</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{series.id}}</td>
+                <td>{{series.title}}</td>
+                <td>{{series.numSeasons}}</td>
+                <td>{{series.numChapters}}</td>
+                <td>{{series.synopsis}}</td>
+                <td>{{series.releaseDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>

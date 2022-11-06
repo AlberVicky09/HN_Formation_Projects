@@ -1,0 +1,106 @@
+<div *ngIf="creationType == -1; else otherCreation">
+    <form [formGroup]="movieCreationForm" (ngSubmit)="movieCreation()">
+        <label for="movieTitle">Title</label>
+        <input formControlName="title"  type="text" class="form-control" id="movieTitle" placeholder="Enter title">
+        <small *ngIf="movieCreationForm.get('title')?.invalid && !movieCreationForm.controls['title'].pristine" class="text-danger">
+            Title is required
+        </small>
+        <br>
+
+        <label for="duration">Duration</label>
+        <input formControlName="duration"  type="text" class="form-control" id="duration" placeholder="Enter duration as XX:XX">
+        <small *ngIf="movieCreationForm.get('duration')?.invalid && !movieCreationForm.controls['duration'].pristine" class="text-danger">
+            <div *ngIf="movieCreationForm.get('duration')?.hasError('required')">
+                Duration is required
+            </div>
+            <div *ngIf="movieCreationForm.get('duration')?.hasError('pattern')">
+                Duration must match XX:XX
+            </div>
+        </small>
+        <br>
+
+        <label for="movieSynopsis">Synopsis</label>
+        <input formControlName="synopsis"  type="text" class="form-control" id="movieSynopsis" placeholder="Enter synopsis">
+        <small *ngIf="movieCreationForm.get('synopsis')?.invalid && !movieCreationForm.controls['synopsis'].pristine" class="text-danger">
+            Synopsis is required    
+        </small>
+
+        <br>
+        <!--Create buttons-->
+        <div *ngIf="!editMode; else editMovies">
+            <button *ngIf="movieCreationForm.invalid" disabled class="btn btn-primary">Submit</button>
+            <button *ngIf="movieCreationForm.valid" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <ng-template #editMovies>
+            <button *ngIf="movieCreationForm.invalid" disabled class="btn btn-primary">Modify</button>
+            <button *ngIf="movieCreationForm.valid" (click)="movieModification()" class="btn btn-primary">Modify</button>
+        </ng-template>
+ 
+    </form>
+</div>
+<ng-template #otherCreation>
+    <form [formGroup]="seriesCreationForm" (ngSubmit)="seriesCreation()">
+        <label for="seriesTitle">Title</label>
+        <input formControlName="title"  type="text" class="form-control" id="seriesTitle" placeholder="Enter title">
+        <small *ngIf="seriesCreationForm.get('title')?.invalid && !seriesCreationForm.controls['title'].pristine" class="text-danger">
+            Title is required
+        </small>
+        <br>
+
+        <label for="numSeasons">Number of seasons</label>
+        <input formControlName="numSeasons"  type="number" class="form-control" id="numSeasons" placeholder="Enter seasons number">
+        <small *ngIf="seriesCreationForm.get('numSeasons')?.invalid && !seriesCreationForm.controls['numSeasons'].pristine" class="text-danger">
+            <div *ngIf="seriesCreationForm.get('numSeasons')?.hasError('required')">
+                Number of seasons is required
+            </div>
+            <div *ngIf="seriesCreationForm.get('numSeasons')?.hasError('min')">
+                Number of seasons must be greater or equal to 1
+            </div>
+        </small>
+        <br>
+
+        <label for="numChapters">Number of chapters per season</label><br>
+        <div *ngFor="let s of numSequence(seasons)" id="numChapters" style="display:inline-block">
+            <input formControlName="numChapters{{s}}" type="number" value="1" class="form-control" id="numChapters{{s}}" placeholder="Chapters of season {{s}}">
+            <small *ngIf="seriesCreationForm.get('numChapters{{s}}')?.invalid && !seriesCreationForm.controls['numChapters{{s}}'].pristine" class="text-danger">
+                <div *ngIf="seriesCreationForm.get('numChapters{{s}}')?.hasError('required')">
+                    Number of chapters is required
+                </div>
+                <div *ngIf="seriesCreationForm.get('numChapters{{s}}')?.hasError('min')">
+                    Number of chapters must be greater or equal to 1
+                </div>
+            </small>
+            <br>
+        </div>
+        <br>
+
+        <label for="synopsis">Synopsis</label>
+        <input formControlName="synopsis"  type="text" class="form-control" id="synopsis" placeholder="Enter synopsis">
+        <small *ngIf="seriesCreationForm.get('synopsis')?.invalid && !seriesCreationForm.controls['synopsis'].pristine" class="text-danger">
+            Synopsis is required    
+        </small>
+        <br>
+
+        <label for="releaseDate">Release date</label>
+        <input formControlName="releaseDate" type="text" class="form-control" id="releaseDate" placeholder="Enter the release date with pattern 'dd/MM/yyyy'">
+        <small *ngIf="seriesCreationForm.get('releaseDate')?.invalid && !seriesCreationForm.controls['releaseDate'].pristine" class="text-danger">
+            <div *ngIf="seriesCreationForm.get('releaseDate')?.hasError('required')">
+                Release date is required
+            </div>
+            <div *ngIf="seriesCreationForm.get('releaseDate')?.hasError('pattern')">
+                Release date must match 'dd/MM/yyyy' pattern
+            </div>
+        </small>
+        <br>
+
+        <!--Create buttons-->
+        <div *ngIf="!editMode; else editSeries">
+            <button *ngIf="seriesCreationForm.invalid" disabled class="btn btn-primary">Submit</button>
+            <button *ngIf="seriesCreationForm.valid" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <ng-template #editSeries>
+            <button *ngIf="seriesCreationForm.invalid" disabled class="btn btn-primary">Modify</button>
+            <button *ngIf="seriesCreationForm.valid" (click)="seriesModification()" class="btn btn-primary">Modify</button>
+        </ng-template>
+    </form>
+</ng-template>
