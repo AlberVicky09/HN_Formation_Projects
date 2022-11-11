@@ -1,3 +1,5 @@
+CREATE USER 'HNStudent'@'localhost' IDENTIFIED BY 'Av12345';
+GRANT ALL PRIVILEGES ON * . * TO 'HNStudent'@'localhost';
 CREATE DATABASE IF NOT EXISTS HNProfile;
 USE HNProfile;
 
