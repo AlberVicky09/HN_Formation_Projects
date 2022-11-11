@@ -1,0 +1,25 @@
+<table class="table" style="text-align:center; width:75%; margin:auto">
+    <thead style="background-color:#80a9beff; color:#890e54ff">
+        <th scope="col">Id</th> 
+        <th scope="col">Name</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Type</th>
+        <th scope="col">Modify</th>
+    </thead>
+    <br>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td (click)="checkUser(user)" style="cursor: pointer">{{user.name}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.typeUser.typeName}}</td>
+            <td>
+                <button class="btn btn-warning" type="button" (click)="enterEditUser(user.id)">Edit</button>
+                ||
+                <button class="btn btn-danger" type="button" (click)="removeUser(user.name, user.id)">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

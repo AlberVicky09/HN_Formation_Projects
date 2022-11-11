@@ -1,0 +1,19 @@
+<table class="table" style="text-align:center; width:75%; margin:auto">
+    <thead style="background-color:#80a9beff; color:#890e54ff">
+        <th scope="col">Id</th>
+        <th scope="col">Type</th>
+        <th scope="col">Modify</th>
+    </thead>
+    <br>
+    <tbody>
+        <tr *ngFor="let type of typeUsers">
+            <td>{{type.id}}</td>
+            <td>{{type.typeName}}</td>
+            <td>
+                <button class="btn btn-warning" type="button" (click)="enterEditType(type.id)">Edit</button>
+                ||
+                <button class="btn btn-danger" type="button" (click)="removeType(type.typeName, type.id)">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

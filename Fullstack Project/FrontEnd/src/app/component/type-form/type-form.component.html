@@ -1,0 +1,21 @@
+<form [formGroup]="typeCreationForm" (ngSubmit)="typeCreation()" style="text-align:center; width:75%; margin:auto">
+    <label for="type" style="color:#890e54ff">Type</label>
+    <input formControlName="type"  type="text" class="form-control" id="type" placeholder="Enter type">
+    <small *ngIf="typeCreationForm.get('type')?.invalid && !typeCreationForm.controls['type'].pristine" class="text-danger">
+        Type is required
+    </small>
+    <br>
+
+    <br>
+    <!--Create buttons-->
+    <div *ngIf="!editMode; else editUser">
+        <button *ngIf="typeCreationForm.invalid" disabled class="btn btn-primary">Submit</button>
+        <button *ngIf="typeCreationForm.valid" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <ng-template #editUser>
+        <button *ngIf="typeCreationForm.invalid" disabled class="btn btn-primary">Modify</button>
+        <button *ngIf="typeCreationForm.valid" (click)="typeModification()" class="btn btn-primary">Modify</button>
+    </ng-template>
+
+</form>
+

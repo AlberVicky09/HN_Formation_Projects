@@ -1,0 +1,48 @@
+<form [formGroup]="userCreationForm" (ngSubmit)="userCreation()" style="text-align:center; width:75%; margin:auto">
+    <label for="name" style="color:#890e54ff">Name</label>
+    <input formControlName="name"  type="text" class="form-control" id="name" placeholder="Enter name">
+    <small *ngIf="userCreationForm.get('name')?.invalid && !userCreationForm.controls['name'].pristine" class="text-danger">
+        Name is required
+    </small>
+    <br>
+
+    <label for="firstName" style="color:#890e54ff">First Name</label>
+    <input formControlName="firstName"  type="text" class="form-control" id="firstName" placeholder="Enter first name">
+    <small *ngIf="userCreationForm.get('firstName')?.invalid && !userCreationForm.controls['firstName'].pristine" class="text-danger">
+        First Name is required
+    </small>
+    <br>
+
+    <label for="email" style="color:#890e54ff">Email</label>
+    <input formControlName="email"  type="text" class="form-control" id="email" placeholder="Enter email">
+    <small *ngIf="userCreationForm.get('email')?.invalid && !userCreationForm.controls['email'].pristine" class="text-danger">
+        <div *ngIf="userCreationForm.get('email')?.hasError('required')">
+            Email is required
+        </div>
+        <div *ngIf="userCreationForm.get('email')?.hasError('email')">
+            Not an email format
+        </div>
+    </small>
+    <br>
+
+    <label for="typeUser" style="color:#890e54ff">Type</label>
+    <select class='select-option' formControlName="typeUser">
+        <option class='option' *ngFor='let type of types' [value]="type.typeName">{{type.typeName}}</option>
+    </select>
+    <br>
+    <small *ngIf="userCreationForm.get('typeUser')?.invalid && !userCreationForm.controls['typeUser'].pristine" class="text-danger">
+        Type is required
+    </small>
+    <br><br>
+    
+    <!--Create buttons-->
+    <div *ngIf="!editMode; else editUser">
+        <button *ngIf="userCreationForm.invalid" disabled class="btn btn-primary">Submit</button>
+        <button *ngIf="userCreationForm.valid" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <ng-template #editUser>
+        <button *ngIf="userCreationForm.invalid" disabled class="btn btn-primary">Modify</button>
+        <button *ngIf="userCreationForm.valid" (click)="userModification()" class="btn btn-primary">Modify</button>
+    </ng-template>
+
+</form>
